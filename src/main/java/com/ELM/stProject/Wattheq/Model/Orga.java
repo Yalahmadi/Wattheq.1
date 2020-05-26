@@ -16,6 +16,8 @@ public class Orga {
     private String orgaName;
     @Column(name = "OrganizationAddress")
     private String orgaAddress;
+    @Column(name = "OrganizationEmail")
+    private String orgaEmail;
     @Column(name = "OrganizationContactNumber")
     private String orgaContactNumber;
 
@@ -25,11 +27,12 @@ public class Orga {
 
     public Orga() {}
 
-    public Orga(int orgaID, String orgaName, String orgaAddress, String orgaContactNumber) {
+    public Orga(int orgaID, String orgaName, String orgaAddress, String orgaContactNumber ,String orgaEmail) {
         this.orgaID = orgaID;
         this.orgaName = orgaName;
         this.orgaAddress = orgaAddress;
         this.orgaContactNumber = orgaContactNumber;
+        this.orgaEmail=orgaEmail;
     }
 
     public int getOrganizationID() {
@@ -60,6 +63,13 @@ public class Orga {
         return orgaContactNumber;
     }
 
+    public String getOrgaEmail() {
+        return orgaEmail;
+    }
+
+    public void setOrgaEmail(String orgaEmail) {
+        this.orgaEmail = orgaEmail;
+    }
 
     public String getOrgaName() {
         return orgaName;

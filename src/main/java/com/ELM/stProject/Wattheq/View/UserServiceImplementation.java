@@ -43,6 +43,13 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
+    public UserDTO getUserByEmail(String email) {
+        User user =  repo.findByEmail(email);
+        UserDTO userDTO = modelMapper.map(user, UserDTO.class);
+        return userDTO;
+    }
+
+    @Override
     public User updateUser(User user, int userID) {
         user.setNationalID(userID);
         return repo.save(user);

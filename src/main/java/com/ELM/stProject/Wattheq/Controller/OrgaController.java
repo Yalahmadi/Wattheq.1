@@ -1,24 +1,28 @@
 package com.ELM.stProject.Wattheq.Controller;
 
 import com.ELM.stProject.Wattheq.Model.Orga;
+import com.ELM.stProject.Wattheq.Repo.OrgaRepo;
 import com.ELM.stProject.Wattheq.Service.OrgaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "/Orga")
 public class OrgaController {
 
     @Autowired
     private OrgaService orgaService;
+    private  OrgaRepo orgaRepo;
 
-    @PostMapping(value = "/AddOrga")
-    public Orga addOrga(@RequestBody Orga orga) {
-        return orgaService.addOrga(orga);
-    }
+//    @PostMapping(value = "/AddOrga")
+//    public void  addOrga(@RequestBody Orga orga)
+//    {
+//        orgaRepo.save(orga);
+////        return orgaService.addOrga(orga);
+//    }
 
     @GetMapping(value = "/GetAllOrgas")
     public List<Orga> getAllOrgas() {

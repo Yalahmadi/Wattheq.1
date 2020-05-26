@@ -21,8 +21,9 @@ public class Cert {
     private String certDate;
     @Column(name = "CertStatus")
     private String certStatus;
+    @Lob
     @Column(name = "CertDocument")
-    private String certDocument;
+    private byte[] certDocument;
 
 
 
@@ -53,9 +54,9 @@ public class Cert {
 
     private Set<Shared> shareds = new HashSet<Shared>();
 
-    public Cert() {}
 
-    public Cert(int certID, String certName, String certType, String certDescription, String certDate, String certStatus, String certDocument) {
+
+    public Cert(int certID, String certName, String certType, String certDescription, String certDate, String certStatus, byte[] certDocument) {
         this.certID = certID;
         this.certName = certName;
         this.certType = certType;
@@ -113,11 +114,11 @@ public class Cert {
         this.certStatus = certStatus;
     }
 
-    public String getCertDocument() {
+    public byte[] getCertDocument() {
         return certDocument;
     }
 
-    public void setCertDocument(String certDocument) {
+    public void setCertDocument(byte[] certDocument) {
         this.certDocument = certDocument;
     }
 

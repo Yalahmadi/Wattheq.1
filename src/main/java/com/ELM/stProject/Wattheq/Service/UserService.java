@@ -11,6 +11,7 @@ public interface UserService {
     public User addInd(User user);
     public List<UserDTO> getAllUsers();
     public UserDTO getUser(int userID);
+    public UserDTO getUserByEmail(String email);
     public User updateUser(User user, int userID);
     public void deleteUser(int userID);
     public void deleteAllUsers();

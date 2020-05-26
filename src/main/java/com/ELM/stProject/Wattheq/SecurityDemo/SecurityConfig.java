@@ -22,13 +22,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
+    private final String[] PUBLIC_ENDPOINTS={ //any public website that doesn't require authentication
+
+            "/certification/**",
+            "/Users/AddInd",
+            "/Orga/AddOrga",
+            "/Users/**"
+
+    };
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .csrf().disable()
-                .authorizeRequests().anyRequest().authenticated()
+
+        http.cors().and().csrf().disable()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .httpBasic().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .authorizeRequests().antMatchers(PUBLIC_ENDPOINTS).permitAll()
+                .anyRequest().authenticated().and().httpBasic().and().headers().frameOptions().sameOrigin();
     }
 
     @Autowired

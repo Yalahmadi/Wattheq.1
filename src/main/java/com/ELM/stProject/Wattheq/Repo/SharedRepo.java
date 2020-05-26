@@ -11,10 +11,6 @@ import java.util.List;
 @Repository
 public interface SharedRepo extends JpaRepository <Shared , Integer> {
 
-
-
-
-
     @Override
     List<Shared> findAll();
 }

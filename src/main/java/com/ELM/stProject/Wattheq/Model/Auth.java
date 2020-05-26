@@ -17,7 +17,7 @@ public class Auth {
     @Column(name = "AuthDescription")
     private String authDescription;
 
-    @OneToMany(mappedBy = "auth" , cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "authorityName" , cascade = CascadeType.ALL)
     private List<User> users = new ArrayList<>();
 
 

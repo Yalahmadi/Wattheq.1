@@ -1,6 +1,7 @@
 package com.ELM.stProject.Wattheq.Service;
 
 import com.ELM.stProject.Wattheq.Model.Cert;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -13,4 +14,5 @@ public interface CertService {
     public Cert updateCert(Cert cert, int certID);
     public void deleteCert(int certID);
     public void deleteAllCerts();
+    public Cert uploadCertificate(MultipartFile file);
 }

@@ -4,6 +4,7 @@ import com.ELM.stProject.Wattheq.Model.Cert;
 import com.ELM.stProject.Wattheq.Service.CertService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -44,4 +45,5 @@ public class   CertController {
     public void deleteAllCerts() {
         certService.deleteAllCerts();
     }
+
 }

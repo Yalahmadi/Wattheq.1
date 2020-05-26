@@ -86,8 +86,8 @@ public class User {
     }
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "AuthName")
-    private Auth auth;
+    @JoinColumn(name = "AuthName" , referencedColumnName = "AuthName")
+    private Auth authorityName;
 
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -114,11 +114,11 @@ public class User {
     }
 
     public Auth getAuth() {
-        return auth;
+        return authorityName;
     }
 
     public void setAuth(Auth auth) {
-        this.auth = auth;
+        this.authorityName = auth;
     }
 
     public List<Shared> getShareds() {
