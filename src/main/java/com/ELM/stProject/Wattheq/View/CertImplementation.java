@@ -53,19 +53,6 @@ public class CertImplementation implements CertService {
         return null;
     }
 
-//    @Override
-//    public Cert uploadCertificate(MultipartFile file) {
-//        try {
-//            String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-//
-//
-//
-//            Cert certificate = new Certificate(fileName, file.getContentType(), file.getBytes(), "Pending");
-//            return repo.save(certificate);
-//        }
-//        catch(IOException e) {
-//            return null;
-//        }
-//    }
+
 
 }

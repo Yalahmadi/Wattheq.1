@@ -15,4 +15,5 @@ public interface CertService {
     public void deleteCert(int certID);
     public void deleteAllCerts();
     public Cert uploadCertificate(MultipartFile file);
+
 }
